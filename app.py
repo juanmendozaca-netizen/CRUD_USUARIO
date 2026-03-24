@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("postgresql://crud_h429_user:V9FojGgimTPBPHVYVUnCOEuhE8gmMFLC@dpg-d71gstggjchc739hsg4g-a/crud_h429")
 
 def get_conn():
     return psycopg2.connect(DATABASE_URL)
@@ -12,6 +12,8 @@ def get_conn():
 @app.route("/")
 def home():
     return "API funcionando"
+
+
 
 # Crear usuario
 @app.route("/users", methods=["POST"])
